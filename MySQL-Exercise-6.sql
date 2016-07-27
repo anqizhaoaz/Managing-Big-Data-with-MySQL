@@ -1,0 +1,1 @@
+# MySQL Exercise 6: Common Pitfalls of Gouped Queries
