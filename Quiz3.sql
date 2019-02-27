@@ -62,6 +62,11 @@ GROUP BY store
 HAVING COUNT(DISTINCT sku)> 180000
 
 # Q10 size and style
+ SELECT DISTINCT s.sku, s.dept, s.style, s.color, s.size, s.vendor, s.brand, s.packsize, d.deptdesc, st.retail, st.cost
+FROM skuinfo s JOIN deptinfo d
+ON s.dept= d.dept JOIN skstinfo st
+ON s.sku=st.sku
+WHERE d.deptdesc='cop' AND s.brand='federal' AND s.color='rinse wash';
 
 # Q11 How many skus are in the skuinfo table, but NOT in the skstinfo table?
 SELECT COUNT(DISTINCT a.sku)
